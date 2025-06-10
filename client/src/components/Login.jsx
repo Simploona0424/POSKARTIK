@@ -13,7 +13,7 @@ function Login() {
     const [showMessage] = useState(false);
     const fetchUserData = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getUser")
+            const res = await axios.get("https://poskartik.onrender.com/api/getUser")
             setUserData(res.data)
         } catch (error) {
             console.log(error)
