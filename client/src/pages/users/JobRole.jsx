@@ -36,7 +36,7 @@ function JobRole() {
 
     const fetchJobRole = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getRole");
+            const res = await axios.get("https://poskartik.onrender.com/api/getRole");
             setJobRole(res.data);
         } catch (error) {
             console.error("Error fetching roles:", error);
@@ -69,9 +69,9 @@ function JobRole() {
 
         try {
             if (editJobRole) {
-                await axios.put(`http://localhost:3000/api/updateRole/${editJobRole._id}`, roleData);
+                await axios.put(`https://poskartik.onrender.com/api/updateRole/${editJobRole._id}`, roleData);
             } else {
-                await axios.post("http://localhost:3000/api/addRole", roleData);
+                await axios.post("https://poskartik.onrender.com/api/addRole", roleData);
             }
 
             await fetchJobRole();
@@ -118,7 +118,7 @@ function JobRole() {
 
     const handleRoleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/deleteRole/${id}`)
+            await axios.delete(`https://poskartik.onrender.com/api/deleteRole/${id}`)
             fetchJobRole();
         } catch (error) {
             console.log(error)

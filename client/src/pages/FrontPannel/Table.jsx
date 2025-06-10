@@ -15,7 +15,7 @@ function Table() {
 
   const fetchPantryLocation = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getlocation");
+      const res = await axios.get("https://poskartik.onrender.com/api/getlocation");
       setPantryLocation(res.data)
     } catch (error) {
       console.log(error)
@@ -58,7 +58,7 @@ function Table() {
 
   const fetchCustomerData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getCustomerData");
+      const res = await axios.get("https://poskartik.onrender.com/api/getCustomerData");
       setCustomerData(res.data)
     } catch (error) {
       console.log(error)

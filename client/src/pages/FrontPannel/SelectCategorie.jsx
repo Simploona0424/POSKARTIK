@@ -27,12 +27,12 @@ function SelectCategorie() {
   const [opensubCategorie, setSubCategorie] = useState(false);
 
   const fetchCategorie = async () => {
-    const response = await axios.get("http://localhost:3000/api/getcategorie");
+    const response = await axios.get("https://poskartik.onrender.com/api/getcategorie");
     setCategorie(response.data);
   };
  
   const fetchProduct = async () => {
-    const res = await axios.get("http://localhost:3000/api/getProduct");
+    const res = await axios.get("https://poskartik.onrender.com/api/getProduct");
     setProduct(res.data);
   };
   useEffect(() => {
@@ -93,7 +93,7 @@ function SelectCategorie() {
 
   const fetchCustomerData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getCustomerData");
+      const res = await axios.get("https://poskartik.onrender.com/api/getCustomerData");
       setCustomerData(res.data)
     } catch (error) {
       console.log(error)
@@ -128,7 +128,7 @@ function SelectCategorie() {
   const handleCustomerData = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/addCustomerData", { customerID, customerLocation, tableStatus, orderType, customerName, phoneno, ordersetList })
+      await axios.post("https://poskartik.onrender.com/api/addCustomerData", { customerID, customerLocation, tableStatus, orderType, customerName, phoneno, ordersetList })
       setAddCustomer(true);
       fetchCustomerData()
       console.log("data saved successfull")

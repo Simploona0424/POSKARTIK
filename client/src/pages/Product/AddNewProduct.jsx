@@ -32,13 +32,13 @@ function AddNewProduct() {
     const fetchData = async () => {
       try {
         const getcategorie = await axios.get(
-          "http://localhost:3000/api/getcategorie"
+          "https://poskartik.onrender.com/api/getcategorie"
         );
         const getsubcategorie = await axios.get(
-          "http://localhost:3000/api/getSubCategorie"
+          "https://poskartik.onrender.com/api/getSubCategorie"
         );
         const getproductbrand = await axios.get(
-          "http://localhost:3000/api/getproductbrand"
+          "https://poskartik.onrender.com/api/getproductbrand"
         );
         
         setSelectcategorie(getcategorie.data.map((item) => item.categorieName));
@@ -69,7 +69,7 @@ function AddNewProduct() {
     formData.append("productbrand", productbrand);
     formData.append("productImage", productImage);
     try {
-      await axios.post("http://localhost:3000/api/addProduct", formData, {
+      await axios.post("https://poskartik.onrender.com/api/addProduct", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

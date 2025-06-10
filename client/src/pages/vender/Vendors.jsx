@@ -47,7 +47,7 @@ function Vendors() {
   };
 
   const fetchProductBrand = async () => {
-    const res = await axios.get("http://localhost:3000/api/getproduct");
+    const res = await axios.get("https://poskartik.onrender.com/api/getproduct");
     setProductBrand(res.data);
   };
   useEffect(() => {
@@ -56,7 +56,7 @@ function Vendors() {
 
   const fetchvenderData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getVender");
+      const res = await axios.get("https://poskartik.onrender.com/api/getVender");
       setVender(res.data);
     } catch (error) {
       console.log(error);
@@ -74,7 +74,7 @@ function Vendors() {
 
   const HandleDeleteVender = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deleteVender/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deleteVender/${id}`);
       setDeletePopup(false);
       fetchvenderData();
     } catch (error) {

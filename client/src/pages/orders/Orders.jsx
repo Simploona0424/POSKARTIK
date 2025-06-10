@@ -13,7 +13,7 @@ function Orders() {
   const [invoicePopup, setInvoicePopup] = useState(false)
 
   const fetchOrderData = async () => {
-    const res = await axios.get("http://localhost:3000/api/getorder");
+    const res = await axios.get("https://poskartik.onrender.com/api/getorder");
     setOrderData(res.data)
   }
 

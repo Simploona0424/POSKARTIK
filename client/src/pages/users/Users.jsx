@@ -31,7 +31,7 @@ function Users() {
   
 
   const fetchjobrole = async () => {
-    const res = await axios.get("http://localhost:3000/api/getRole");
+    const res = await axios.get("https://poskartik.onrender.com/api/getRole");
     setSelectJobRole(res.data);
   };
 
@@ -44,7 +44,7 @@ function Users() {
   };
   const fetchUserData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getUser");
+      const res = await axios.get("https://poskartik.onrender.com/api/getUser");
       setUserData(res.data);
     } catch (error) {
       console.log(error);
@@ -75,7 +75,7 @@ function Users() {
     try {
       if (EditUser) {
         await axios.put(
-          `http://localhost:3000/api/updateUser/${EditUser._id}`,
+          `https://poskartik.onrender.com/api/updateUser/${EditUser._id}`,
           formData,
           {
             headers: {
@@ -84,7 +84,7 @@ function Users() {
           }
         );
       } else {
-        await axios.post("http://localhost:3000/api/addUser", formData, {
+        await axios.post("https://poskartik.onrender.com/api/addUser", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -125,7 +125,7 @@ function Users() {
   };
   const handleDeleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deleteUser/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deleteUser/${id}`);
       setOpenDeletePopup(false);
       fetchUserData();
     } catch (error) {

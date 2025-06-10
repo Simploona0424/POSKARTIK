@@ -75,7 +75,7 @@ function EditCustomers() {
     if (businessProof) data.append("businessProof", businessProof);
 
     try {
-      await axios.put(`http://localhost:3000/api/updatecustomer/${id}`, data, {
+      await axios.put(`https://poskartik.onrender.com/api/updatecustomer/${id}`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

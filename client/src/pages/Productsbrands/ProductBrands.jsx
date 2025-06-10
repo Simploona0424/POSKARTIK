@@ -19,7 +19,7 @@ function ProductBrands() {
   };
   const fetchBrandData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getproductbrand");
+      const res = await axios.get("https://poskartik.onrender.com/api/getproductbrand");
       setBranddata(res.data);
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ function ProductBrands() {
 
   const HandleDeletebrand = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deleteproductbrand/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deleteproductbrand/${id}`);
       toast.success("ProductBrand Delete Sucessfully...");
       setDeletePopup(false);
       fetchBrandData();

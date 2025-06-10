@@ -29,7 +29,7 @@ function Dashboard() {
 
   const fetchNewLocation = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getlocation");
+      const res = await axios.get("https://poskartik.onrender.com/api/getlocation");
       setSelectLocation(res.data);
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ function Dashboard() {
 
   const CustomerOrderData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getsavedCustomer");
+      const res = await axios.get("https://poskartik.onrender.com/api/getsavedCustomer");
       setCustomerData(res.data)
     } catch (error) {
       console.log(error)

@@ -21,7 +21,7 @@ function Categories() {
 
   const fetchCategorie = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getcategorie");
+      const res = await axios.get("https://poskartik.onrender.com/api/getcategorie");
       setCategorieData(res.data);
     } catch (error) {
       console.log(error);
@@ -47,7 +47,7 @@ function Categories() {
 
   const HandleDeleteCategorie = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deletecategorie/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deletecategorie/${id}`);
       toast.success("Categorie Delete Sucessfully...");
       setDeletePopup(false);
       fetchCategorie();

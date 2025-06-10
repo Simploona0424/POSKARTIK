@@ -51,7 +51,7 @@ function AddNewLocation() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/addlocation", {
+      await axios.post("https://poskartik.onrender.com/api/addlocation", {
         pantryName,
         concernPerson,
         contact,

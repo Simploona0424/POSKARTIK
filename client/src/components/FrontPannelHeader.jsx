@@ -46,7 +46,7 @@ function FrontPannelHeader({ setInputValue }) {
     const handleFormSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post("http://localhost:3000/api/balence", {
+            await axios.post("https://poskartik.onrender.com/api/balence", {
                 currentDate,
                 userlocation,
                 balencetype,
@@ -76,7 +76,7 @@ function FrontPannelHeader({ setInputValue }) {
 
     const fetchBalence = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getbalence")
+            const res = await axios.get("https://poskartik.onrender.com/api/getbalence")
             setFatchingData(res.data)
         } catch (error) {
             console.log(error)

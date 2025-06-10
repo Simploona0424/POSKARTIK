@@ -31,7 +31,7 @@ function AddNewProductBrand() {
     try {
       if (EditBrandData) {
         await axios.put(
-          `http://localhost:3000/api/updateproductbrand/${EditBrandData._id}`,
+          `https://poskartik.onrender.com/api/updateproductbrand/${EditBrandData._id}`,
           formData,
           {
             headers: {
@@ -42,7 +42,7 @@ function AddNewProductBrand() {
         toast.success("ProductBrand Update Successfully....");
       } else {
         await axios.post(
-          "http://localhost:3000/api/addproductbrand",
+          "https://poskartik.onrender.com/api/addproductbrand",
           formData,
           {
             headers: {

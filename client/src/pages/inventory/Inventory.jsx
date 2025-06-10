@@ -23,7 +23,7 @@ function Inventory() {
 
   const fetchNewLocation = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getlocation");
+      const res = await axios.get("https://poskartik.onrender.com/api/getlocation");
       setSelectLocation(res.data);
     } catch (error) {
       console.log(error);
@@ -68,17 +68,17 @@ function Inventory() {
   };
 
   const fetchProduct = async () => {
-    const res = await axios.get("http://localhost:3000/api/getProduct");
+    const res = await axios.get("https://poskartik.onrender.com/api/getProduct");
     setProductData(res.data);
   };
 
   const fetchCategorie = async () => {
-    const res = await axios.get("http://localhost:3000/api/getcategorie");
+    const res = await axios.get("https://poskartik.onrender.com/api/getcategorie");
     setCategorie(res.data);
   };
 
   const fetchSubCategorie = async () => {
-    const res = await axios.get("http://localhost:3000/api/getSubCategorie");
+    const res = await axios.get("https://poskartik.onrender.com/api/getSubCategorie");
     setSubcategorie(res.data);
   };
 

@@ -38,11 +38,11 @@ function AddNewOrder() {
 
     const fetchcustomers = async () => {
         try {
-            const getcustomer = await axios.get("http://localhost:3000/api/getcustomer")
-            const getproduct = await axios.get("http://localhost:3000/api/getProduct")
-            const getcategorie = await axios.get("http://localhost:3000/api/getcategorie");
-            const getsubcategorie = await axios.get("http://localhost:3000/api/getSubCategorie");
-            const getproductbrand = await axios.get("http://localhost:3000/api/getproductbrand");
+            const getcustomer = await axios.get("https://poskartik.onrender.com/api/getcustomer")
+            const getproduct = await axios.get("https://poskartik.onrender.com/api/getProduct")
+            const getcategorie = await axios.get("https://poskartik.onrender.com/api/getcategorie");
+            const getsubcategorie = await axios.get("https://poskartik.onrender.com/api/getSubCategorie");
+            const getproductbrand = await axios.get("https://poskartik.onrender.com/api/getproductbrand");
             setSelectCustomer(getcustomer.data)
             setSelectProduct(getproduct.data.map(item => item.productName));
             setSelectcategorie(getcategorie.data.map(item => item.categorieName));
@@ -60,7 +60,7 @@ function AddNewOrder() {
     const handleFormSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post("http://localhost:3000/api/addorder", { emailid, phoneno, gstno, panno, address1, state, city, pincode, customer, productdetail });
+            await axios.post("https://poskartik.onrender.com/api/addorder", { emailid, phoneno, gstno, panno, address1, state, city, pincode, customer, productdetail });
             navigate("/orders")
         } catch (error) {
             console.log(error)

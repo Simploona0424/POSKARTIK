@@ -28,7 +28,7 @@ function AddNewCategories() {
     try {
       if (EditCategorieData) {
         await axios.put(
-          `http://localhost:3000/api/updatecategorie/${EditCategorieData._id}`,
+          `https://poskartik.onrender.com/api/updatecategorie/${EditCategorieData._id}`,
           formData,
           {
             headers: {
@@ -38,7 +38,7 @@ function AddNewCategories() {
         );
         toast.success("Categorie Update Successfully...");
       } else {
-        await axios.post("http://localhost:3000/api/addcategorie", formData, {
+        await axios.post("https://poskartik.onrender.com/api/addcategorie", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

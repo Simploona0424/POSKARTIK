@@ -24,7 +24,7 @@ function Sidebar() {
     if (!jobRole) return;
 
     try {
-      const res = await axios.get('http://localhost:3000/api/getRole');
+      const res = await axios.get('https://poskartik.onrender.com/api/getRole');
       const roleData = res.data.find((role) => role.roleName === jobRole);
       setManagerole(roleData || {});
     } catch (error) {

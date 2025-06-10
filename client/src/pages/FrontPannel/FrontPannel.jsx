@@ -7,7 +7,7 @@ function FrontPannel() {
     const [categorie, setCategorie] = useState([])
     console.log(categorie)
     const fetchCategorie = async () => {
-        const response = await axios.get("http://localhost:3000/api/getcategorie")
+        const response = await axios.get("https://poskartik.onrender.com/api/getcategorie")
         setCategorie(response.data)
     }
     useEffect(() => {

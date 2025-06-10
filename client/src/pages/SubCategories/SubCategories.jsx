@@ -16,7 +16,7 @@ function SunCategories() {
   const [inputValue, setInputValue] = useState("");
   const fetchSubCategorie = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getSubCategorie");
+      const res = await axios.get("https://poskartik.onrender.com/api/getSubCategorie");
       setSubcategorieData(res.data);
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ function SunCategories() {
 
   const HandleDeleteSubCategorie = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deleteSubCategorie/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deleteSubCategorie/${id}`);
       toast.success("Subcategorie Delete Successfully");
       setDeletePopup(false);
       fetchSubCategorie();

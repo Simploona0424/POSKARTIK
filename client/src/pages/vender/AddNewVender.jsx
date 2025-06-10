@@ -102,13 +102,13 @@ function AddNewVender() {
     const fetchData = async () => {
       try {
         const getcategorie = await axios.get(
-          "http://localhost:3000/api/getcategorie"
+          "https://poskartik.onrender.com/api/getcategorie"
         );
         const getsubcategorie = await axios.get(
-          "http://localhost:3000/api/getSubCategorie"
+          "https://poskartik.onrender.com/api/getSubCategorie"
         );
         const getproductbrand = await axios.get(
-          "http://localhost:3000/api/getproductbrand"
+          "https://poskartik.onrender.com/api/getproductbrand"
         );
         setSelectcategorie(getcategorie.data.map((item) => item.categorieName));
         setSelectsubcategorie(
@@ -136,7 +136,7 @@ function AddNewVender() {
     try {
       if (EditVenderData) {
         await axios.put(
-          `http://localhost:3000/api/updateVender/${EditVenderData._id}`,
+          `https://poskartik.onrender.com/api/updateVender/${EditVenderData._id}`,
           {
             vender,
             email,
@@ -153,7 +153,7 @@ function AddNewVender() {
         );
         toast.success("Vender Update Successfully...");
       } else {
-        await axios.post("http://localhost:3000/api/addVender", {
+        await axios.post("https://poskartik.onrender.com/api/addVender", {
           vender,
           vendercode,
           userName,

@@ -2,7 +2,7 @@ const customerData = require("../models/Customer")
 
 const postCustomers = async (req, res) => {
    try {
-      const baseURL = "http://localhost:3000/uploads/";
+      const baseURL = "https://poskartik.onrender.com/uploads/";
       const personalproof = req.files?.personalproof ? `${baseURL}${req.files.personalproof[0].filename}` : null;
       const businessProof = req.files?.businessProof ? `${baseURL}${req.files.businessProof[0].filename}` : null;
       // const personalproof = req.files['personalproof']?.[0]?.path || null;
@@ -32,7 +32,7 @@ const updateCustomers = async (req, res) => {
       const { id } = req.params
       const { customerType, companyName, concernPerson, emailID, phoneNO, location, rMcode, address1, address2, city, state, pincode, gstno, newRows, personalproof, businessProof } = req.body;
       const parsedNewRows = newRows ? JSON.parse(newRows) : [];
-      const baseURL = "http://localhost:3000/uploads/";
+      const baseURL = "https://poskartik.onrender.com/uploads/";
       const personalProof = req.files?.personalproof ? `${baseURL}${req.files.personalproof[0].filename}` : null;
       const businessproof = req.files?.businessProof ? `${baseURL}${req.files.businessProof[0].filename}` : null;
       const savedcustomerData = await customerData.findByIdAndUpdate(id, { customerType, companyName, concernPerson, emailID, phoneNO, location, rMcode, address1, address2, city, state, pincode, gstno, newRows: parsedNewRows, personalproof: personalProof || undefined, businessProof: businessproof || undefined }, { new: true });

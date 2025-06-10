@@ -16,7 +16,7 @@ function Customers() {
   const [inputValue, setInputValue] = useState("");
   const fetchcustomers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getcustomer");
+      const res = await axios.get("https://poskartik.onrender.com/api/getcustomer");
       setCustomerData(res.data);
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ function Customers() {
   };
   const HandleDeleteCustomers = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/deletecustomer/${id}`);
+      await axios.delete(`https://poskartik.onrender.com/api/deletecustomer/${id}`);
       toast.success("Customer Delete Successfull...");
       setShowDeletePopUP(false);
       fetchcustomers();

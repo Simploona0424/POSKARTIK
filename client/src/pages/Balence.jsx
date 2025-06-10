@@ -30,7 +30,7 @@ function Balence() {
 
     const fetchNewLocation = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getlocation");
+            const res = await axios.get("https://poskartik.onrender.com/api/getlocation");
             setSelectLocation(res.data);
         } catch (error) {
             console.log(error);
@@ -42,7 +42,7 @@ function Balence() {
 
     const fetchBalence = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getbalence");
+            const res = await axios.get("https://poskartik.onrender.com/api/getbalence");
             setBalence(res.data);
         } catch (error) {
             console.log(error);

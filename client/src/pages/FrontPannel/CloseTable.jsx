@@ -17,11 +17,11 @@ function CloseTable() {
     const [activeCategorieIndex, setActiveCategorieIndex] = useState(null);
     
     const fetchCategorie = async () => {
-        const response = await axios.get("http://localhost:3000/api/getcategorie");
+        const response = await axios.get("https://poskartik.onrender.com/api/getcategorie");
         setCategorie(response.data);
     };
     const fetchProduct = async () => {
-        const res = await axios.get("http://localhost:3000/api/getProduct");
+        const res = await axios.get("https://poskartik.onrender.com/api/getProduct");
         setProduct(res.data);
     };
     useEffect(() => {
@@ -66,7 +66,7 @@ function CloseTable() {
             setOrdersetList(updatedList);
             try {
                 await axios.put(
-                    `http://localhost:3000/api/putCustomerData/${customerID}`,
+                    `https://poskartik.onrender.com/api/putCustomerData/${customerID}`,
                     { ordersetList: [newItem] }
                 );
                 fetchCustomerData()
@@ -91,7 +91,7 @@ function CloseTable() {
 
 
         try {
-            await axios.patch(`http://localhost:3000/api/UpdateSubcategorieCustomer/${customerID}`, {
+            await axios.patch(`https://poskartik.onrender.com/api/UpdateSubcategorieCustomer/${customerID}`, {
                 itemId,
                 delta
             });
@@ -105,7 +105,7 @@ function CloseTable() {
     const updateCount = async (customerId, itemId, delta) => {
         try {
             await axios.patch(
-                `http://localhost:3000/api/updateCustomerData/${customerId}/${itemId}`,
+                `https://poskartik.onrender.com/api/updateCustomerData/${customerId}/${itemId}`,
                 { delta: Number(delta) }
             );
             fetchCustomerData();
@@ -116,7 +116,7 @@ function CloseTable() {
 
     const deleteOrder = async (customerId, itemId) => {
         try {
-            await axios.delete(`http://localhost:3000/api/deleteCustomerData/${customerId}/${itemId}`);
+            await axios.delete(`https://poskartik.onrender.com/api/deleteCustomerData/${customerId}/${itemId}`);
             const updatedOrdersetList = ordersetList.filter((item) => item._id !== itemId);
             setOrdersetList(updatedOrdersetList);
             fetchCustomerData();
@@ -136,7 +136,7 @@ function CloseTable() {
 
     const fetchCustomerData = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/getCustomerData");
+            const res = await axios.get("https://poskartik.onrender.com/api/getCustomerData");
             setCustomerData(res.data)
         } catch (error) {
             console.log(error)
@@ -166,7 +166,7 @@ function CloseTable() {
     // const handleCustomerData = async (e) => {
     //     e.preventDefault();
     //     try {
-    //         await axios.post("http://localhost:3000/api/addCustomerData", { customerID, customerName, phoneno, ordersetList })
+    //         await axios.post("https://poskartik.onrender.com/api/addCustomerData", { customerID, customerName, phoneno, ordersetList })
     //         setCustomerName(" ");
     //         setPhoneno(" ");
     //         setAddCustomer(true);

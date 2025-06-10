@@ -17,7 +17,7 @@ function AddSubCategories() {
   
   const fetchcategorie = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getcategorie");
+      const res = await axios.get("https://poskartik.onrender.com/api/getcategorie");
       setCategorie(res.data);
     } catch (error) {
       console.log(error);
@@ -40,7 +40,7 @@ function AddSubCategories() {
     try {
       if (EditSubcategorie) {
         await axios.put(
-          `http://localhost:3000/api/updateSubCategorie/${EditSubcategorie._id}`,
+          `https://poskartik.onrender.com/api/updateSubCategorie/${EditSubcategorie._id}`,
           formData,
           {
             headers: {
@@ -51,7 +51,7 @@ function AddSubCategories() {
         toast.success("Subcategorie Update Successfully");
       } else {
         await axios.post(
-          "http://localhost:3000/api/addSubCategorie",
+          "https://poskartik.onrender.com/api/addSubCategorie",
           formData,
           {
             headers: {

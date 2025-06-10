@@ -28,9 +28,9 @@ function ProductView() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const getcategorie = await axios.get("http://localhost:3000/api/getcategorie");
-                const getsubcategorie = await axios.get("http://localhost:3000/api/getSubCategorie");
-                const getproductbrand = await axios.get("http://localhost:3000/api/getproductbrand");
+                const getcategorie = await axios.get("https://poskartik.onrender.com/api/getcategorie");
+                const getsubcategorie = await axios.get("https://poskartik.onrender.com/api/getSubCategorie");
+                const getproductbrand = await axios.get("https://poskartik.onrender.com/api/getproductbrand");
                 setSelectcategorie(getcategorie.data.map(item => item.CategorieName));
                 setSelectsubcategorie(getsubcategorie.data.map(item => item.subCategory));
                 setSelectproductbrand(getproductbrand.data.map(item => item.brandName));
@@ -62,7 +62,7 @@ function ProductView() {
         formData.append("productbrand", productbrand)
         formData.append("productImage", productImage)
         try {
-            await axios.put(`http://localhost:3000/api/updateProduct/${editProductData._id}`, formData, {
+            await axios.put(`https://poskartik.onrender.com/api/updateProduct/${editProductData._id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -76,7 +76,7 @@ function ProductView() {
 
 
     const fetchProduct = async () => {
-        const res = await axios.get("http://localhost:3000/api/getProduct")
+        const res = await axios.get("https://poskartik.onrender.com/api/getProduct")
         setProductDataView(res.data)
     }
     useEffect(() => {
@@ -103,7 +103,7 @@ function ProductView() {
     }
 
     const HandleDeleteProduct = async (id) => {
-        await axios.delete(`http://localhost:3000/api/deleteProduct/${id}`);
+        await axios.delete(`https://poskartik.onrender.com/api/deleteProduct/${id}`);
         toast.success("Product Delete Succesfull...")
         setDeletePopup(false)
         fetchProduct()

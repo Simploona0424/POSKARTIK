@@ -56,7 +56,7 @@ function EditLocation() {
     e.preventDefault(); // ← ADD THIS
     try {
       await axios.put(
-        `http://localhost:3000/api/updatelocation/${editLocation._id}`,
+        `https://poskartik.onrender.com/api/updatelocation/${editLocation._id}`,
         { pantryName, concernPerson, contact, address1, address2, state, city, pincode, map, latitude, longitude, table }
       );
       toast.success("Location updated successfully.");

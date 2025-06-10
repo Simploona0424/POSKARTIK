@@ -19,7 +19,7 @@ function PantryLocation() {
 
   const fetchNewLocation = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/getlocation");
+      const res = await axios.get("https://poskartik.onrender.com/api/getlocation");
       setPantryData(res.data);
     } catch (error) {
       console.log(error);
