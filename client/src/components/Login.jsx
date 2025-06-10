@@ -11,7 +11,6 @@ function Login() {
     const [userData, setUserData] = useState()
     const [showPassword, setShowPassword] = useState(false);
     const [showMessage] = useState(false);
-    console.log(userData)
     const fetchUserData = async () => {
         try {
             const res = await axios.get("http://localhost:3000/api/getUser")
